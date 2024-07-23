@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload Signature{% endblock %}
+
+{% block content %}
+<style>
+    /* CSS styles */
+    .upload-container {
+        max-width: 600px; /* Adjusted max-width for smaller container */
+        margin: 50px auto; /* Centered horizontally with top and bottom margin */
+        padding: 20px; /* Reduced padding for a smaller container */
+        background-color: #f9f9f9; /* Background color */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .upload-container h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 24px; /* Adjusted font size */
+    }
+
+    .upload-container form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upload-container label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .upload-container input[type="file"] {
+        width: 80%;
+        padding: 10px; /* Reduced padding for input */
+        margin-bottom: 10px; /* Smaller bottom margin */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .upload-container button {
+        width: 90%;
+        padding: 12px 20px; /* Adjusted padding for button */
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff; /* Button color */
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .upload-container button:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
+
+<div class="upload-container">
+    <h2>Upload Your Signature</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="signature_image">Choose a Signature Image:</label>
+        <input type="file" id="signature_image" name="signature_image" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+{% endblock %}
