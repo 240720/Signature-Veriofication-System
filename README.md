@@ -1,5 +1,6 @@
 # Signature-Veriofication-System
 Welcome to the Signature Verification System repository! This project aims to provide a reliable and efficient solution for authenticating signatures using advanced image processing and machine learning techniques.
+
 How It Works:
 Signature Upload: Users can upload signature images via a web interface. The system supports various image formats for compatibility.
 Preprocessing: Signature images undergo preprocessing to enhance quality and extract key features. This includes noise reduction, resizing, and normalization.
